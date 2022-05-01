@@ -789,7 +789,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 
 黄味が大きく、噛んでみると濃厚な味が口いっぱいに広がる。さすがに生卵を何もなしに食べても美味しくないかと思ったが、意外と美味しい。ご飯と醤油があればもっと美味しいだろうが、この非常時に文句は言えない。
 
-食べてすぐに、エナジーが身体に満ちていくのが分かる。(if:$status is &quot;正常&quot; or $huantei is 0)[本当にエナジーが回復して……。
+食べてすぐに、エナジーが身体に満ちていくのが分かる。(if:$status is &quot;正常&quot; and $huantei is 0)[本当にエナジーが回復して……。
 
 「い゛っ！？」
 
@@ -819,7 +819,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 =||||=
 牛乳瓶を一つ手に取り、腰に手を当てて一気に牛乳を飲み干す。あまりにも銭湯の合う牛乳瓶だったせいで勢いで飲んでしまったが、思った以上に美味しくてごくごく飲んでしまった。
 
-喉の渇きも癒え、エナジーも回復していくのが分かる。(if:$status is &quot;正常&quot; or $huantei is 0)[明らかに牛乳の味だったが、これは一体……！？
+喉の渇きも癒え、エナジーも回復していくのが分かる。(if:$status is &quot;正常&quot; and $huantei is 0)[明らかに牛乳の味だったが、これは一体……！？
 
 「がっ……！」
 
@@ -849,7 +849,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 =||||=
 あまり飲みたくはないが、良薬は口に苦しという。これを我慢するだけでエナジーが回復するなら、緊急事態だ。我慢して飲もう。
 
-(if:$status is &quot;正常&quot; or $huatei is 0)[「うぇ……」
+(if:$status is &quot;正常&quot; and $huatei is 0)[「うぇ……」
 
 一口飲んだ瞬間、吐き気がして瓶を落としてしまう。なんだこれ……やたらとぬめぬめして青臭い……間違いなく飲み物ではない。なんで飲もうと思ったのか、ほんの少し前の自分に小一時間問い詰めたいほどだ。
 
@@ -1330,7 +1330,7 @@ $MRnameの口が吊り上がる。今俺が鼠怪人になってしまってい�
 
 [[その後……-&gt;ゲームオーバーリーダー・ラット]](set:$status to &quot;絶対忠誠&quot;)(set:$name to &quot;リーダー・ラット&quot;)(set:$soubi to &quot;戦闘員スーツ&quot;)(set:$EP to 150)(set:$HP to 100)(set:$sinsyoku to 100)
 
-|==|</tw-passagedata><tw-passagedata pid="28" name="ゲームオーバーリーダー・ラット" tags="" position="710,5" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="28" name="ゲームオーバーリーダー・ラット" tags="" position="711,3" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -2852,7 +2852,7 @@ GAMEOVER:鶏怪人として、生涯組織に捧げるエナジーエッグを�
 「イエロー！」
 
 俺は、怪人としての役目を果たすべく、自分のいるべき場所へと戻った。
-
+(set:$HP to 0)
 (if:$status is &quot;鶏怪人化&quot;)[[[その後……-&gt;ゲームオーバー・産卵鶏怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;産卵中毒&quot;)(set:$name to &quot;産卵鶏怪人&quot;)(set:$gameover to 1)
 ](elseif:$status is &quot;牛怪人化&quot;)[[[その後……-&gt;ゲームオーバー・搾乳牛怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;鼻輪&quot;)(set:$status to &quot;搾乳中毒&quot;)(set:$name to &quot;搾乳牛怪人&quot;)(set:$gameover to 1)](elseif:$status is &quot;馬怪人化&quot;)[[[その後……-&gt;ゲームオーバー・ザーメン製造馬怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;チンポ化&quot;)(set:$name to &quot;搾精馬怪人&quot;)(set:$gameover to 1)
 
@@ -2964,7 +2964,7 @@ GAMEOVER:鶏怪人として、生涯組織に捧げるエナジーエッグを�
 「はい……」
 
 俺は、怪人としての役目を果たすべく、自分のいるべき場所へと戻った。
-
+(set:$HP to 0)
 (if:$status is &quot;鶏怪人化&quot;)[[[その後……-&gt;ゲームオーバー・産卵鶏怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;産卵中毒&quot;)(set:$name to &quot;産卵鶏怪人&quot;)(set:$gameover to 1)
 ](elseif:$status is &quot;牛怪人化&quot;)[[[その後……-&gt;ゲームオーバー・搾乳牛怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;鼻輪&quot;)(set:$status to &quot;搾乳中毒&quot;)(set:$name to &quot;搾乳牛怪人&quot;)(set:$gameover to 1)](elseif:$status is &quot;馬怪人化&quot;)[[[その後……-&gt;ゲームオーバー・ザーメン製造馬怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;チンポ化&quot;)(set:$name to &quot;搾精馬怪人&quot;)(set:$gameover to 1)]
 ]]
@@ -3841,7 +3841,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 |==|</tw-passagedata><tw-passagedata pid="72" name="グラトニー・ドラゴンの部屋" tags="" position="1357,704" size="100,100">
 =|=
-($menubar:)(set:$time to $time + 1)
+($menubar:)(set:$time to $time + 1)(set:$GDescapeF to 0)
 =||||=
 重苦しく巨大な扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1)[ここにはグラトニー・ドラゴンという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
 
