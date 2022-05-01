@@ -1152,7 +1152,7 @@ $MRnameの口が吊り上がる。今俺が鼠怪人になってしまってい�
 
 怪人化させられる前に間に合ったようだ。これなら問題なく救出出来るだろう。]
 
-「今助けるぞ！」
+(if:$time &lt; 50)[「今助けるぞ！」
 
 すぐにカプセルの蓋に手を掛けて開こうとするも、(if:$soubi is not &quot;ヒーロースーツ&quot;)[当然ながら]ビクともしない。これを強引に開けるのはパワーに特化したエナジーが無ければ難しいだろう。レッドならやりそうだが……今いない奴の事を考えても仕方ない。
 
@@ -1164,7 +1164,7 @@ $MRnameの口が吊り上がる。今俺が鼠怪人になってしまってい�
 
 (if:$status is &quot;正常&quot;)[[[ブルーを救出する-&gt;ブルー救出・裸エナジー]]](else:)[[[ブルーを救出する-&gt;ブルー救出・怪人化エナジー]]]
 
-[[一度撤退する-&gt;進行マス]]](elseif:$EP &lt; 100)[今あるエナジー全てを使ったとしても、救出は出来ないだろう。カプセルを開くだけならば、もしかしたら可能かもしれないが、その場合、中の状態は保証出来ない状態になる。それではブルーを救助出来ない可能性の方が圧倒的に高い。
+[[一度撤退する-&gt;進行マス]]]](elseif:$EP &lt; 100 and $time &lt; 50)[今あるエナジー全てを使ったとしても、救出は出来ないだろう。カプセルを開くだけならば、もしかしたら可能かもしれないが、その場合、中の状態は保証出来ない状態になる。それではブルーを救助出来ない可能性の方が圧倒的に高い。
 
 直ぐに救出したいが、今はグッと堪えて、エナジーをフルにするか、ヒーロースーツを見付ける他ない。
 
@@ -1926,7 +1926,7 @@ GAMEOVER：雑魚戦闘員の隊長として、鼠怪人達の主の右腕とし
 
 [[先に進む-&gt;進行マス]](set:$HPB to 100)(set:$EPB to 100)(set:$soubiB to &quot;なし&quot;)(set:$statusB to &quot;犬怪人化&quot;)(set:$sinsyokuB to 50)]
 (set:$blue to 1)
-|==|</tw-passagedata><tw-passagedata pid="37" name="ゲームオーバー・ブルーに敗北" tags="" position="825,5" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="37" name="ゲームオーバー・ブルーに敗北" tags="" position="831,3" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -2212,7 +2212,7 @@ GAMEOVER：雑魚戦闘員の隊長として、鼠怪人達の主の右腕とし
 
 [[その後……-&gt;ゲームオーバー・産卵鶏怪人化]](set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;産卵中毒&quot;)(set:$name to &quot;産卵鶏怪人&quot;)(set:$gameover to 1)
 
-|==|</tw-passagedata><tw-passagedata pid="42" name="逃走イベント怪人化中" tags="" position="703,233" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="42" name="逃走イベント怪人化中" tags="" position="703,228" size="100,100">
 =|=
 ($menubar:)(set:$time to $time + 1)
 =||||=
@@ -2224,17 +2224,17 @@ GAMEOVER：雑魚戦闘員の隊長として、鼠怪人達の主の右腕とし
 
 (if:$event &gt; 50)[鼠怪人達の反応が遅れたようで、追い掛けてくるよりも前に角を曲がり廊下を進み、なんとか他の雑魚戦闘員に気付かれることなく逃げ出すことに成功した。
 
-[[先に進む-&gt;進行マス]]](else:)[鼠怪人達がこちらに反応して、抑え込もうとしてくる。両サイドから捕まれ、体が地面に倒れる。(set:$HP to $HP - 20)
+[[先に進む-&gt;進行マス]]](elseif:$event &lt;= 50)[鼠怪人達がこちらに反応して、抑え込もうとしてくる。両サイドから捕まれ、体が地面に倒れる。(set:$HP to $HP - 20)
 
 (if:$HP &lt;= 0)[「うっ……く、そ……」
 
 体力が限界を迎え、しっかりと抑え込まれてしまう。俺は、このままこいつらに連れて行かれてしまうのか……。(set:$HP to 0)
 
-(if:$status is &quot;鶏怪人化&quot;)[[[連れて行かれる-&gt;産卵室]]](elseif:$status is &quot;牛獣人化&quot;)[[[連れて行かれる-&gt;搾乳室]]](elseif:$status is &quot;馬怪人化&quot;)[[連れて行かれる-&gt;搾精室]]]](else:)[なんとか振り払って、その場から逃走する。幸い追いつかれることも、他の雑魚戦闘員に見付かることもなく、ひとまず落ち着ける場所まで逃げることに成功した。
+(if:$status is &quot;鶏怪人化&quot;)[[[連れて行かれる-&gt;産卵室]]](elseif:$status is &quot;牛獣人化&quot;)[[[連れて行かれる-&gt;搾乳室]]](elseif:$status is &quot;馬怪人化&quot;)[[[連れて行かれる-&gt;搾精室]]]](else:)[なんとか振り払って、その場から逃走する。幸い追いつかれることも、他の雑魚戦闘員に見付かることもなく、ひとまず落ち着ける場所まで逃げることに成功した。
 
 体力を20失った
 
-[[先に進む-&gt;進行マス]]]
+[[先に進む-&gt;進行マス]]]]
 |==|</tw-passagedata><tw-passagedata pid="43" name="搾乳室" tags="" position="925,234" size="100,100">
 =|=
 ($menubar:)
@@ -2861,7 +2861,7 @@ GAMEOVER:鶏怪人として、生涯組織に捧げるエナジーエッグを�
 =|=
 ($menubar:)
 =||||=
-ようやくアジトの奥、もとい入口まで出ることが出来た。だが……。
+(if:$soubi is &quot;ヒーロースーツ&quot;)[ようやくアジトの奥、もとい入口まで出ることが出来た。だが……。
 
 「ほう、本当に出て来られるとはな」
 
@@ -2883,7 +2883,7 @@ GAMEOVER:鶏怪人として、生涯組織に捧げるエナジーエッグを�
 
 ブルーを殺すことになったのは、ブルーを怪人にして洗脳してきた【ゾディアック】のせいだ。どうにも出来なかった自分の無力さは勿論あるが、そもそもこいつらがいるせいで……！](else:)[「……！」
 
-確かに、ブルーを助けることが出来ないまま、ここまで来てしまった。(if:$soubi is &quot;ヒーロースーツ&quot;)[ヒーロースーツは取り戻したというのに、ブルーを探さずにここまで来てしまったんだ。逃げ出して来たと言われても、反論が出来ない。
+確かに、ブルーを助けることが出来ないまま、ここまで来てしまった。ヒーロースーツは取り戻したというのに、ブルーを探さずにここまで来てしまったんだ。逃げ出して来たと言われても、反論が出来ない。]
 
 「とはいえ、ゲームもここまでだ。レッド・ドッグ。お前の忠誠を示せ」
 
@@ -2907,7 +2907,25 @@ GAMEOVER:鶏怪人として、生涯組織に捧げるエナジーエッグを�
 
 [[躊躇する-&gt;最終戦レッド・敗北]]
 
-(if:$blueded is 0)[[[脱出を優先する-&gt;最終戦レッド・猿エンド]]]]](elseif:$soubi is not &quot;ヒーロースーツ&quot;)[結局ヒーロースーツを取り戻せず、ここまで逃げて来たと言ってしまえば、それが事実だ。外に出て助けを呼べればと言えば聞こえはいい。足掻いてでも生き延びて、情報を持ち帰ると言えば、それも現実的な選択だ。しかし、ヒーローとしては、逃げたと言われても、反論が出来ない。
+(if:$blueded is 0)[[[脱出を優先する-&gt;最終戦レッド・猿エンド]]]](elseif:$soubi is not &quot;ヒーロースーツ&quot;)[ようやくアジトの奥、もとい入口まで出ることが出来た。だが……。
+
+「ほう、本当に出て来られるとはな」
+
+入り口には、二人の怪人が待っていた。一人は巨体の虎怪人。頭は普通の虎と同じく黄色に黒の縞模様なのだが、身体は黒いボディスーツに覆われており、体中に白い縞模様が描かれている。胸元には他のスーツを着ていた怪人同様、虎の頭を模した模様が描かれていた。2mを優に超え、スーツの上からでもハッキリと分かる筋肉を持っている。
+
+そして、もう一人。赤い毛の犬怪人が、その傍に仕えていた。ただの犬怪人であれば、数の不利程度に思っただろう。が、しかし、そいつの着ているボディスーツが問題だ。赤をベースに黒で炎が燃えるような模様が手足に描かれたもの。それはまるで、俺の仲間であり、このアジトへ乗り込んだ目的でもある、ブレイジング・レッドのものに酷似しているのだ。
+
+俺が怪人にされそうになったことから、なんとなく推察が出来てしまう。何より、その胸のエナジークリスタルのように変質してしまっているとはいえ、このエナジーは間違いなく、ブレイジング・レッドのものだ。つまり、あの犬怪人は……。
+
+「レッド！」
+
+「さすがはイエロー、元仲間なだけはあるワン！」
+
+確かにレッドの声で、態度で、しかしふざけた語尾を付けてそう言ってくる犬怪人。理性を持ったまま、それなのに完全に怪人にされてしまっているのか……。
+
+「しかし、一人で逃げ出して来たか。期待程ではなかったな」
+
+結局ヒーロースーツを取り戻せず、ここまで逃げて来たと言ってしまえば、それが事実だ。外に出て助けを呼べればと言えば聞こえはいい。足掻いてでも生き延びて、情報を持ち帰ると言えば、それも現実的な選択だ。しかし、ヒーローとしては、逃げたと言われても、反論が出来ない。
 
 (if:$status is &quot;正常&quot;)[「とはいえ、ゲームもここまでだ。レッド・ドッグ。お前の忠誠を示せ」
 
@@ -3203,11 +3221,11 @@ GAMEOVER:馬怪人になり、ザーメンを出すこと以外考えられな�
 
 (if:$MRtekizyohoF1 is 1)[[[特別実験室のカードキーを探している-&gt;リバース・バニーカード貰う怪人化]]](else:)[[[仲間のヒーローを探している-&gt;リバース・バニーカード貰う怪人化]]]]]
 
-|==|</tw-passagedata><tw-passagedata pid="59" name="スティンク・ボアの部屋" tags="" position="912,686" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="59" name="スティンク・ボアの部屋" tags="" position="910,692" size="100,100">
 =|=
 ($menubar:)
 =||||=
-Column 2
+
 |==|</tw-passagedata><tw-passagedata pid="60" name="リバース・バニー攻撃・裸" tags="" position="1026,576" size="100,100">
 =|=
 ($menubar:)
@@ -4468,7 +4486,7 @@ GAMEOVER:竜怪人となり、太膨肥育されてエナジーザーメンを�
 
 [[その後……-&gt;ゲームオーバー・マゾ猿公開凌辱]](set:$HP to 100)(set:$EP to 100)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;マゾ奴隷&quot;)(set:$sinsyoku to 100)(set:$name to &quot;ドM猿怪人&quot;)(set:$gameover to 1)
 
-|==|</tw-passagedata><tw-passagedata pid="85" name="ゲームオーバー・犬怪人エンドブルー死亡版" tags="" position="950,5" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="85" name="ゲームオーバー・犬怪人エンドブルー死亡版" tags="" position="951,5" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -5886,17 +5904,18 @@ GAMEOVER:キング・タイガーとして、怪人王国【ゾディアック�
 
 END：【ゾディアック】首領キング・タイガー討伐完了
 
-|==|</tw-passagedata><tw-passagedata pid="108" name="セーブ画面" tags="" position="102,898" size="100,100">セーブするスロットを選択してください(set:$nowroom to last of (history:))
+|==|</tw-passagedata><tw-passagedata pid="108" name="セーブ画面" tags="" position="98,913" size="100,100">セーブするスロットを選択してください(set:$nowroom to last of (history:))
 (set:$savename to &quot;状態&quot; + &quot;「$status」&quot; + &quot;装備&quot; + &quot;「$soubi」&quot; + &quot;進行度&quot;+&quot;「$sinkou」&quot;)
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;Slot A&quot;,$savename))[(if:(saved-games:) contains &quot;Slot A&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;Slot A&quot;)[(print:(saved-games:)&#39;s &quot;Slot A&quot;)](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;Slot A&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;Slot B&quot;,$savename))[(if:(saved-games:) contains &quot;Slot B&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;Slot B&quot;)[(print:(saved-games:)&#39;s &quot;Slot B&quot;)](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;Slot B&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotA&quot;,&quot;$savename&quot;))[(if:(saved-games:) contains &quot;SlotA&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotA&quot;)[(print:&quot;SlotA&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotA&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;Slot C&quot;,$savename))[(if:(saved-games:) contains &quot;Slot C&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;Slot C&quot;)[(print:(saved-games:)&#39;s &quot;Slot C&quot;)](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;Slot C&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotB&quot;,$savename))[(if:(saved-games:) contains &quot;SlotB&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotB&quot;)[(print:&quot;SlotB&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotB&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;Slot D&quot;,$savename))[(if:(saved-games:) contains &quot;Slot D&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;Slot D&quot;)[(print:(saved-games:)&#39;s &quot;Slot D&quot;)](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;Slot D&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotC&quot;,$savename))[(if:(saved-games:) contains &quot;SlotC&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotC&quot;)[(print:&quot;SlotC&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotC&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;Slot E&quot;,$savename))[(if:(saved-games:) contains &quot;Slot E&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;Slot E&quot;)[(print:(saved-games:)&#39;s &quot;Slot E&quot;)](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;Slot C&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotD&quot;,$savename))[(if:(saved-games:) contains &quot;SlotD&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotD&quot;)[(print:&quot;SlotD&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotD&quot;)]]
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;,$savename))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
 
 (link-reveal-goto:&quot;戻る&quot;,&quot;$nowroom&quot;)[]</tw-passagedata><tw-passagedata pid="109" name="ブルー救出・怪人化エナジー" tags="" position="809,913" size="100,100">
 =|=
