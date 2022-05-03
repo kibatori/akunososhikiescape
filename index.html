@@ -528,7 +528,7 @@
 =||||=
 何かないかと家探ししてみることにした。
 
-(set:$event to (random:0,3))(if:$soubi is &quot;雑魚戦闘員スーツ&quot;)[(set:$event to 0)](if:$cardshurui is 0)[(set:$cardshurui to (shuffled:&quot;保管室&quot;,&quot;RB室&quot;,&quot;MR室&quot;))](if:$cardev is 0)[(set:$card to 1st of $cardshurui)](elseif:$cardev is 1)[(set:$card to 2nd of $cardshurui)](elseif:$cardev is 2)[(set:$card to 3rd of $cardshurui)]
+(set:$event to (random:0,3))(if:$soubi is &quot;雑魚戦闘員スーツ&quot;)[(set:$event to 1)](if:$cardshurui is 0)[(set:$cardshurui to (shuffled:&quot;保管室&quot;,&quot;RB室&quot;,&quot;MR室&quot;))](if:$cardev is 0)[(set:$card to 1st of $cardshurui)](elseif:$cardev is 1)[(set:$card to 2nd of $cardshurui)](elseif:$cardev is 2)[(set:$card to 3rd of $cardshurui)]
 (if:$event &gt; 0 and $cardev &lt; 3)[机の上に何かのカードが置かれているのを見付けた。カードには(if:$card is &quot;保管室&quot; and $cardhokan is 0)[収集物保管室と書かれていた。収集物？　怪人達が集めているのは……エナジーではないのか？　他にもあるとしたら、略奪品などもあるだろうか。だとしたら、俺のスーツもそこにあるかも知れない。
 
 ならば、このカードは持っていた方がいいだろう。
