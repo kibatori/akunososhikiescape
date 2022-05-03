@@ -3221,10 +3221,24 @@ GAMEOVER:馬怪人になり、ザーメンを出すこと以外考えられな�
 
 (if:$MRtekizyohoF1 is 1)[[[特別実験室のカードキーを探している-&gt;リバース・バニーカード貰う怪人化]]](else:)[[[仲間のヒーローを探している-&gt;リバース・バニーカード貰う怪人化]]]]]
 
-|==|</tw-passagedata><tw-passagedata pid="59" name="スティンク・ボアの部屋" tags="" position="910,692" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="59" name="スティンク・ボアの部屋" tags="" position="910,687" size="100,100">=|=
 ($menubar:)
 =||||=
+扉を潜ったが、なおも廊下が続いていた。横幅の広めな廊下で、一見漆喰のように見える壁紙が張られている。触ってみたが、その下は金属のようだ。なんだか歪に思えるが、和室……のようなものだろうか。
+
+そのまま進むと、和風のイメージとは裏腹に、分厚そうな金属扉が置かれている。重いだろうが開けること自体は難しくなさそうだ。
+
+(if:$MRblueF is 1)[しかし、この部屋にブルーのいる部屋の鍵を持っている怪人がいる以上、尻込みしてはいられない。](else:)[しかし、こんな扉のある部屋にる怪人を相手にしていいものか……。敵の情報もない以上、慎重に行った方がいいのではないだろうか。]
+
+「うっ……」
+
+扉に手を掛け少し引いた瞬間、物凄い臭いが鼻に飛び込んで来て、思わず眉を顰めた。(if:$SBroomRe is 1)[相変わらずあまりにも酷い臭いだ。正直もう嗅ぎたくないんだが……。](elseif:$SBname is &quot;スティンク・ボア&quot;)[$MRnameは体臭がどうとか言っていたが、このあり得ない臭いが体臭なのか？　いくらなんでも信じたくないが……。](else:)[一体何の臭いだ？　山奥の掃除の行き届いていない公衆トイレでもここまで酷くないだろう……。]
+
+どうする、このまま入っていいものだろうか……。
+
+[[そのまま入る-&gt;スティンク・ボア邂逅]]
+
+[[引き返す-&gt;進行マス]](set:$SBroomRe is 1)
 
 |==|</tw-passagedata><tw-passagedata pid="60" name="リバース・バニー攻撃・裸" tags="" position="1026,576" size="100,100">
 =|=
@@ -3635,7 +3649,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 &#39;&#39;特別実験室のカードキーを手に入れた&#39;&#39;(set:$cardtokubetu to 1)
 
-[[部屋を出る-&gt;進行マス]]](elseif:$tokubetuCF is 1)(set:$RBclearF to 1)[少しの間、わざとらしい考える素振りをする$RBname。何を企んでいるんだ？
+[[部屋を出る-&gt;進行マス]](set:$RBclearF to 1)](elseif:$tokubetuCF is 1)[少しの間、わざとらしい考える素振りをする$RBname。何を企んでいるんだ？
 
 「君と一緒に来たヒーローの居場所、教えてあげようか？」
 
@@ -3661,7 +3675,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 本当ならこの場で倒してしまった方がいいのだろうが、今は一分一秒が惜しい。それに、抵抗しない相手を攻撃するのは、いくら怪人相手でも、ヒーローとしての性分に合わない。
 
-[[部屋を出る-&gt;進行マス]]](set:$RBclearF to 1)
+[[部屋を出る-&gt;進行マス]](set:$RBclearF to 1)]
 
 ]
 |==|</tw-passagedata><tw-passagedata pid="68" name="リバース・バニーカード貰う怪人化" tags="" position="1134,465" size="100,100">
@@ -4032,7 +4046,7 @@ EP(set:$EP to 100)(input-box:bind $EP,&quot;X=&quot;,1,&quot;100&quot;)
 ブルーのスーツの持ち主（0：竜、1：蛇、2：羊）(set:$bluesuitF to 0)(input-box:bind $bluesuitF,&quot;X=&quot;,1,&quot;0&quot;)
 不安定化状態(set:$huantei to 0)(input-box:bind $huantei,&quot;X=&quot;,1,&quot;0&quot;)
 
-行先[[]]
+行先[[リバース・バニーの部屋]]
 |==|</tw-passagedata><tw-passagedata pid="75" name="グラトニー・ドラゴン捕食" tags="" position="1469,700" size="100,100">
 =|=
 ($menubar:)
@@ -6030,7 +6044,18 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 ブルー・ブリザードを救出しました。以降はブルー・ブリザードのステータスが表示されます。現在ブルー・ブリザードは犬怪人に変貌してしまいました。体力やエナジーに問題はないばかりか、ライトニング・イエローよりも戦えるでしょう。しかし、ふとした拍子に怪人化の悪影響が及ぶ可能性があります。注意しておきましょう。
 
 [[先に進む-&gt;進行マス]](set:$HPB to 100)(set:$EPB to 100)(set:$soubiB to &quot;なし&quot;)(set:$statusB to &quot;犬怪人化&quot;)(set:$sinsyokuB to 50)]
-(set:$blue to 1)</tw-passagedata></tw-storydata>
+(set:$blue to 1)</tw-passagedata><tw-passagedata pid="110" name="スティンク・ボア邂逅" tags="" position="1023,686" size="100,100">
+=|=
+($menubar:)
+=||||=
+意を決して扉を開き中に入る。
+
+『どすこい！』
+
+入ってすぐにそんな声の合唱が聞こえて来た。
+
+
+|==|</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
