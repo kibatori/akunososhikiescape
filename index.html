@@ -4046,7 +4046,7 @@ EP(set:$EP to 100)(input-box:bind $EP,&quot;X=&quot;,1,&quot;100&quot;)
 ブルーのスーツの持ち主（0：竜、1：蛇、2：羊）(set:$bluesuitF to 0)(input-box:bind $bluesuitF,&quot;X=&quot;,1,&quot;0&quot;)
 不安定化状態(set:$huantei to 0)(input-box:bind $huantei,&quot;X=&quot;,1,&quot;0&quot;)
 
-行先[[リバース・バニーの部屋]]
+行先[[]]
 |==|</tw-passagedata><tw-passagedata pid="75" name="グラトニー・ドラゴン捕食" tags="" position="1469,700" size="100,100">
 =|=
 ($menubar:)
@@ -5918,20 +5918,19 @@ GAMEOVER:キング・タイガーとして、怪人王国【ゾディアック�
 
 END：【ゾディアック】首領キング・タイガー討伐完了
 
-|==|</tw-passagedata><tw-passagedata pid="108" name="セーブ画面" tags="" position="98,913" size="100,100">セーブするスロットを選択してください(set:$nowroom to last of (history:))
-(set:$savename to &quot;状態&quot; + &quot;「$status」&quot; + &quot;装備&quot; + &quot;「$soubi」&quot; + &quot;進行度&quot;+&quot;「$sinkou」&quot;)
+|==|</tw-passagedata><tw-passagedata pid="108" name="セーブ画面" tags="" position="96.33333333333333,899.6666666666667" size="100,100">セーブするスロットを選択してください
+(set:$returnroom to last of (history:))
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotA&quot;))[(if:(saved-games:) contains &quot;SlotA&quot;)[セーブしました(set:$statusA to $status)(set:$soubiA to $soubi)(set:$sinkouA to $sinkou)(set:$savenameA to &quot;状態&quot; + &quot;「$statusA」&quot; + &quot;装備&quot; + &quot;「$soubiA」&quot; + &quot;進行度&quot;+&quot;「$sinkouA」&quot;)(save-game:&quot;SlotA&quot;,$savenameA)(set:$savedA to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotA&quot;)[(print:&quot;SlotA&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotA&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotA&quot;,&quot;$savename&quot;))[(if:(saved-games:) contains &quot;SlotA&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotA&quot;)[(print:&quot;SlotA&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotA&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotB&quot;))[(if:(saved-games:) contains &quot;SlotB&quot;)[セーブしました(set:$statusB to $status)(set:$soubiB to $soubi)(set:$sinkouB to $sinkou)(set:$savenameB to &quot;状態&quot; + &quot;「$statusB」&quot; + &quot;装備&quot; + &quot;「$soubiB」&quot; + &quot;進行度&quot;+&quot;「$sinkouB」&quot;)(save-game:&quot;SlotB&quot;,$savenameB)(set:$savedB to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotB&quot;)[(print:&quot;SlotB&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotB&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotB&quot;,$savename))[(if:(saved-games:) contains &quot;SlotB&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotB&quot;)[(print:&quot;SlotB&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotB&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotC&quot;))[(if:(saved-games:) contains &quot;SlotC&quot;)[セーブしました(set:$statusC to $status)(set:$soubiC to $soubi)(set:$sinkouC to $sinkou)(set:$savenameC to &quot;状態&quot; + &quot;「$statusC」&quot; + &quot;装備&quot; + &quot;「$soubiC」&quot; + &quot;進行度&quot;+&quot;「$sinkouC」&quot;)(save-game:&quot;SlotC&quot;,$savenameC)(set:$savedC to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotC&quot;)[(print:&quot;SlotC&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotC&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotC&quot;,$savename))[(if:(saved-games:) contains &quot;SlotC&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotC&quot;)[(print:&quot;SlotC&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotC&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotD&quot;))[(if:(saved-games:) contains &quot;SlotD&quot;)[セーブしました(set:$statusD to $status)(set:$soubiD to $soubi)(set:$sinkouD to $sinkou)(set:$savenameD to &quot;状態&quot; + &quot;「$statusD」&quot; + &quot;装備&quot; + &quot;「$soubiD」&quot; + &quot;進行度&quot;+&quot;「$sinkouD」&quot;)(save-game:&quot;SlotD&quot;,$savenameD)(set:$savedD to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotD&quot;)[(print:&quot;SlotD&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotD&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotD&quot;,$savename))[(if:(saved-games:) contains &quot;SlotD&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotD&quot;)[(print:&quot;SlotD&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotD&quot;)]]
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました(set:$statusE to $status)(set:$soubiE to $soubi)(set:$sinkouE to $sinkou)(set:$savenameE to &quot;状態&quot; + &quot;「$statusE」&quot; + &quot;装備&quot; + &quot;「$soubiE」&quot; + &quot;進行度&quot;+&quot;「$sinkouE」&quot;)(save-game:&quot;SlotE&quot;,$savenameE)(set:$savedE to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
 
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;,$savename))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
-
-(link-reveal-goto:&quot;戻る&quot;,&quot;$nowroom&quot;)[]</tw-passagedata><tw-passagedata pid="109" name="ブルー救出・怪人化エナジー" tags="" position="809,913" size="100,100">
+(link-goto:&quot;戻る&quot;,&quot;$returnroom&quot;)</tw-passagedata><tw-passagedata pid="109" name="ブルー救出・怪人化エナジー" tags="" position="809,913" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6052,10 +6051,32 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 
 『どすこい！』
 
-入ってすぐにそんな声の合唱が聞こえて来た。
+入ってすぐにそんな声が聞こえて来た。それと共に、ドスンという床を踏み鳴らす音が聞こえる。
+
+扉を開けた瞬間から襲い掛かる臭気に思わず目を背けてしまい何が起きているのか見えなかったが、意を決して音のする方を見ると、そこには相撲の土俵があった。円になるよう縄が配置され、床には砂が敷かれている。やたらと蒸し暑く、それ以上に鼻を摘まんでも意味を成さない臭さが充満してる。
+
+「まだまぁ！　もう一本だぁ！」
+
+『ふごぉ！』
+
+そして、土俵の上では茶色い毛の太った怪人の集団が、四股を踏んでいた。先頭でこちらから顔の見える怪人からして、豚……いや、小さな牙からして猪だろうか。
 
 
-|==|</tw-passagedata></tw-storydata>
+
+|==|</tw-passagedata><tw-passagedata pid="111" name="テストパッセージ" tags="" position="104.99999999999997,1097.5" size="100,100">セーブするスロットを選択してください
+(set:const-type $savename to &quot;状態&quot; + &quot;「$status」&quot; + &quot;装備&quot; + &quot;「$soubi」&quot; + &quot;進行度&quot;+&quot;「$sinkou」&quot;)
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotA&quot;,&quot;$savename&quot;))[(if:(saved-games:) contains &quot;SlotA&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotA&quot;)[(print:&quot;SlotA&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotA&quot;)]]
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotB&quot;,$savename))[(if:(saved-games:) contains &quot;SlotB&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotB&quot;)[(print:&quot;SlotB&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotB&quot;)]]
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotC&quot;,$savename))[(if:(saved-games:) contains &quot;SlotC&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotC&quot;)[(print:&quot;SlotC&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotC&quot;)]]
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotD&quot;,$savename))[(if:(saved-games:) contains &quot;SlotD&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotD&quot;)[(print:&quot;SlotD&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotD&quot;)]]
+
+(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;,$savename))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
+
+(link-undo:&quot;戻る&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
