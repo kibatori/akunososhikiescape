@@ -138,7 +138,7 @@
 呆けている場合ではない。着るものも見付からないし、様子を見に怪人が来る前にこの部屋から出てしまおう。
 
 [[ゲームの説明]]
-|==|</tw-passagedata><tw-passagedata pid="5" name="進行マス" tags="" position="11,198" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="5" name="進行マス" tags="" position="9,198" size="100,100">
 =|=
 (if:$soubi is &quot;ヒーロースーツ&quot;)[(set:$EP to 100)](else:)[(set:$EP to $EP + 5)(if:$EP &gt; 100)[(set:$EP to 100)]](if:$blue is 1)[(if:$soubiB is &quot;ヒーロースーツ&quot;)[(set:$EPB to 100)](else:)[(set:$EPB to $EPB + 5)(if:$EPB &gt; 100)[(set:$EPB to 100)]]]($menubar:)
 =||||=
@@ -1186,13 +1186,13 @@ $MRnameの口が吊り上がる。今俺が鼠怪人になってしまってい�
 
 (if:$status is &quot;正常&quot;)[[[ブルーを救出する-&gt;ブルー救出・裸エナジー]]](else:)[[[ブルーを救出する-&gt;ブルー救出・怪人化エナジー]]]
 
-[[一度撤退する-&gt;進行マス]]]](elseif:$EP &lt; 100 and $time &lt; 50)[今あるエナジー全てを使ったとしても、救出は出来ないだろう。カプセルを開くだけならば、もしかしたら可能かもしれないが、その場合、中の状態は保証出来ない状態になる。それではブルーを救助出来ない可能性の方が圧倒的に高い。
+[[一度撤退する-&gt;進行マス]]](elseif:$EP &lt; 100)[今あるエナジー全てを使ったとしても、救出は出来ないだろう。カプセルを開くだけならば、もしかしたら可能かもしれないが、その場合、中の状態は保証出来ない状態になる。それではブルーを救助出来ない可能性の方が圧倒的に高い。
 
 直ぐに救出したいが、今はグッと堪えて、エナジーをフルにするか、ヒーロースーツを見付ける他ない。
 
 「すまないブルー、少し待っていてくれ」
 
-[[一度撤退する-&gt;進行マス]](set:$bluemeetF to 1)]
+[[一度撤退する-&gt;進行マス]](set:$bluemeetF to 1)]]
 |==|</tw-passagedata><tw-passagedata pid="26" name="部屋再訪イベント" tags="" position="239,665" size="100,100">
 =|=
 ($menubar:)(set:$sinkou to $sinkou - 1)
@@ -1808,7 +1808,7 @@ GAMEOVER：雑魚戦闘員の隊長として、鼠怪人達の主の右腕とし
 ダメだ、意識が……。
 
 (if:$status is &quot;鼠怪人化&quot;)[[[その後……-&gt;ゲームオーバーリーダー・ラット]]](elseif:$status is &quot;牛怪人化&quot;)[[[その後……-&gt;搾乳室]]](elseif:$status is &quot;馬怪人化&quot;)[[[その後……-&gt;搾精室]]](elseif:$status is &quot;鶏怪人化&quot;)[[[その後……-&gt;産卵室]]]]
-|==|</tw-passagedata><tw-passagedata pid="35" name="ブルー救出・ヒーロースーツあり" tags="" position="588,909" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="35" name="ブルー救出・ヒーロースーツあり" tags="" position="589,907" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -3963,17 +3963,17 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 =|=
 ($menubar:)(set:$time to $time + 1)(set:$GDescapeF to 0)
 =||||=
-重苦しく巨大な扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1)[ここにはグラトニー・ドラゴンという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
+重苦しく巨大な扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1 and $bluesuitF is 0)[ここにはグラトニー・ドラゴンという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
 
 (if:$blue is 1 and $soubi is &quot;ヒーロースーツ&quot;)[「ブルー、ここで待っていてくれるか？　危なくなったら逃げてくれ」
 
 「そうですね……今の私では足手纏いですからね」
 
-(if:$MRbluesuitF is 1)[「必ず取り戻してくる」
+(if:$MRbluesuitF is 1 and $bluesuitF is 0)[「必ず取り戻してくる」
 
 ブルーのスーツさえ取り戻せば、脱出も現実的なものになるだろう。この戦いは負けられない。](else:)[「必ず戻ってくる」
 
-今のブルーでは強力な怪人と対峙したなら命の危機だ。ここに何があるかは分からないが、何もないということはないだろう。]](elseif:$blue is 1 and $soubi is not &quot;ヒーロースーツ&quot;)[(if:$MRbluesuitF is 1)[「ここにブルーのスーツが……」
+今のブルーでは強力な怪人と対峙したなら命の危機だ。ここに何があるかは分からないが、何もないということはないだろう。]](elseif:$blue is 1 and $soubi is not &quot;ヒーロースーツ&quot;)[(if:$MRbluesuitF is 1 and $bluesuitF is 0)[「ここにブルーのスーツが……」
 
 「しかし、これは……」
 
@@ -4011,7 +4011,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 (if:$soubi is &quot;ヒーロースーツ&quot; and $bluesuitF is 0)[「よりにもよってヒーローが来やがったか。さては青い方のスーツを取り戻しに来たな？」
 
-(if:$MRbluesuitF is 0)[青い方のスーツ？　ということは、ここにブルーのスーツがあると？　勝手に喋ってくれて、良い情報が手に入った。こいつを倒せば、ブルーのスーツを手に入れられる。](elseif:$MRbluesuitF is 1)[$MRnameの言った通り、本当にここにあるようだ。気を引き締めなくては。おそらくこいつを倒さなければ、スーツを取り戻すことは出来ない。]
+(if:$MRbluesuitF is 0)[青い方のスーツ？　ということは、ここにブルーのスーツがあると？　勝手に喋ってくれて、良い情報が手に入った。こいつを倒せば、ブルーのスーツを手に入れられる。](elseif:$MRbluesuitF is 1 and $bluesuitF is 0)[$MRnameの言った通り、本当にここにあるようだ。気を引き締めなくては。おそらくこいつを倒さなければ、スーツを取り戻すことは出来ない。]
 
 「どっちでもいいな。ヒーローが来た以上、俺の腹に入れるだけのことよ！」
 
@@ -4130,7 +4130,7 @@ EP(set:$EP to 100)
 ブルーのスーツの持ち主（0：竜、1：蛇、2：羊）(set:$bluesuitF to 0)
 不安定化状態(set:$huantei to 0)
 
-行先[[スティンク・ボアの部屋]]
+行先[[]]
 |==|</tw-passagedata><tw-passagedata pid="75" name="グラトニー・ドラゴン捕食" tags="" position="1488,223" size="100,100">
 =|=
 ($menubar:)
@@ -4330,7 +4330,7 @@ GAMEOVER:竜怪人となり、太膨肥育されてエナジーザーメンを�
 (if:$EP &gt;= 50)[(link-reveal-goto:&quot;腹へエナジーの電撃を放つ&quot;,&quot;グラトニー・ドラゴン攻撃&quot;)[(set:$GDattack to &quot;腹雷撃&quot;)]　EP消費50](else:)[腹へエナジーの電撃を放つ　エナジーが足りない（必要EP50)]
 
 (if:$GDattack is not &quot;様子見&quot;)[(link-reveal-goto:&quot;様子を見る&quot;,&quot;グラトニー・ドラゴン攻撃&quot;)[(set:$GDattack to &quot;様子見&quot;)]]]
-|==|</tw-passagedata><tw-passagedata pid="79" name="グラトニー・ドラゴン様子見続き" tags="" position="1601,335" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="79" name="グラトニー・ドラゴン様子見続き" tags="" position="1597,333" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6024,7 +6024,7 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 
 (b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました(set:$statusE to $status)(set:$soubiE to $soubi)(set:$sinkouE to $sinkou)(set:$savenameE to &quot;状態&quot; + &quot;「$statusE」&quot; + &quot;装備&quot; + &quot;「$soubiE」&quot; + &quot;進行度&quot;+&quot;「$sinkouE」&quot;)(save-game:&quot;SlotE&quot;,$savenameE)(set:$savedE to 0)]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
 
-(link-goto:&quot;戻る&quot;,&quot;$returnroom&quot;)</tw-passagedata><tw-passagedata pid="109" name="ブルー救出・怪人化エナジー" tags="" position="809,913" size="100,100">
+(link-goto:&quot;戻る&quot;,&quot;$returnroom&quot;)</tw-passagedata><tw-passagedata pid="109" name="ブルー救出・怪人化エナジー" tags="" position="807,913" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6191,20 +6191,7 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 
 [[様子を見る-&gt;スティンク・ボア怪人化カード貰う]]]
 
-|==|</tw-passagedata><tw-passagedata pid="111" name="テストパッセージ" tags="" position="102,1097" size="100,100">セーブするスロットを選択してください
-(set:const-type $savename to &quot;状態&quot; + &quot;「$status」&quot; + &quot;装備&quot; + &quot;「$soubi」&quot; + &quot;進行度&quot;+&quot;「$sinkou」&quot;)
-
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブA](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotA&quot;,&quot;$savename&quot;))[(if:(saved-games:) contains &quot;SlotA&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotA&quot;)[(print:&quot;SlotA&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotA&quot;)]]
-
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブB](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotB&quot;,$savename))[(if:(saved-games:) contains &quot;SlotB&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotB&quot;)[(print:&quot;SlotB&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotB&quot;)]]
-
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブC](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotC&quot;,$savename))[(if:(saved-games:) contains &quot;SlotC&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotC&quot;)[(print:&quot;SlotC&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotC&quot;)]]
-
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブD](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotD&quot;,$savename))[(if:(saved-games:) contains &quot;SlotD&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotD&quot;)[(print:&quot;SlotD&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotD&quot;)]]
-
-(b4r:&quot;solid&quot;)+(b4r-colour:white)[セーブE](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;セーブ&quot;)[(if:(save-game:&quot;SlotE&quot;,$savename))[(if:(saved-games:) contains &quot;SlotE&quot;)[セーブしました]]]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(if: (saved-games:) contains &quot;SlotE&quot;)[(print:&quot;SlotE&quot; of (saved-games:))](else:)[なし]](b4r:&quot;solid&quot;)+(b4r-colour:white)[(link:&quot;ロード&quot;)[(load-game: &quot;SlotE&quot;)]]
-
-(link-undo:&quot;戻る&quot;)</tw-passagedata><tw-passagedata pid="112" name="スティンク・ボア攻撃" tags="" position="1134,686" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="111" name="スティンク・ボア攻撃" tags="" position="1134,686" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6325,7 +6312,7 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 
 [[空気を吸い込む-&gt;スティンク・ボア敗北]]]
 
-|==|</tw-passagedata><tw-passagedata pid="113" name="スティンク・ボア迫られる" tags="" position="1240,690" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="112" name="スティンク・ボア迫られる" tags="" position="1240,690" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6392,7 +6379,7 @@ END：【ゾディアック】首領キング・タイガー討伐完了
 今すぐ離さなくてはならない。鼻を閉じなくてはならない。臭いを取り込んではならない。頭の中で鳴り響く警鐘に反して、どういうわけか鼻は大きく開き、臭すぎる空気を取り込んでしまっている。
 
 [[空気を吸い込む-&gt;スティンク・ボア敗北]]]
-|==|</tw-passagedata><tw-passagedata pid="114" name="スティンク・ボア怪人化カード貰う" tags="" position="1023,793" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="113" name="スティンク・ボア怪人化カード貰う" tags="" position="1023,793" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6518,7 +6505,7 @@ $SBnameの手には、『特別実験室』と書かれたカードキーがあ�
 
 [[部屋を出る-&gt;進行マス]]]
 (set:$SBclearF to 1)
-|==|</tw-passagedata><tw-passagedata pid="115" name="スティンク・ボア敗北" tags="" position="1239,806" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="114" name="スティンク・ボア敗北" tags="" position="1239,806" size="100,100">
 =|=
 (set:$sinsyoku to 50)($menubar:)
 =||||=
@@ -6604,7 +6591,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 (set:$status to &quot;脇足股間汚臭&quot;)(set:$name to &quot;悪臭猪怪人&quot;)(set:$soubi to &quot;汚廻し&quot;)(set:$HP to 150)(set:$EP to 100)(set:$sinsyoku to 100)(set:$gameover to 1)
 [[その後……-&gt;ゲームオーバー・悪臭猪怪人力士化]]
 
-|==|</tw-passagedata><tw-passagedata pid="116" name="最終イベント前・解除薬の所持" tags="" position="1736,357" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="115" name="最終イベント前・解除薬の所持" tags="" position="1736,357" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6623,7 +6610,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 [[ブルーに預ける-&gt;最終イベント前・ブルーに預ける]]
 
 [[自分で持っておく-&gt;最終イベント前・自分で持っておく]]
-|==|</tw-passagedata><tw-passagedata pid="117" name="最終イベント前・ブルーに預ける" tags="" position="1844,357" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="116" name="最終イベント前・ブルーに預ける" tags="" position="1844,357" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6636,7 +6623,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 「では、今度こそ行きましょう」
 
 [[先に進む-&gt;最終イベント・ブルー同行]]
-|==|</tw-passagedata><tw-passagedata pid="118" name="最終イベント前・自分で持っておく" tags="" position="1844,469" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="117" name="最終イベント前・自分で持っておく" tags="" position="1844,469" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6655,7 +6642,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 「ええ。では、改めて行きましょうか」
 
 [[先に進む-&gt;最終イベント・ブルー同行]](set:$havekaizyoyaku to 1)
-|==|</tw-passagedata><tw-passagedata pid="119" name="最終イベント・レッドに薬打つ" tags="" position="2543,108" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="118" name="最終イベント・レッドに薬打つ" tags="" position="2543,108" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6684,7 +6671,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 そんな思いを抱きながら、俺達はアジトから無事脱出することに成功した。
 
 [[その後……-&gt;ノーマルエンド・レッド獣化解除]]
-|==|</tw-passagedata><tw-passagedata pid="120" name="最終イベント・薬打たない" tags="" position="2662,111" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="119" name="最終イベント・薬打たない" tags="" position="2662,111" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6712,7 +6699,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 
 [[その後……-&gt;エンディング・グッドエンド]]
 
-|==|</tw-passagedata><tw-passagedata pid="121" name="エンディング・グッドエンド" tags="" position="2662,0" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="120" name="エンディング・グッドエンド" tags="" position="2662,0" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6760,7 +6747,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 
 [[部屋に入る-&gt;エンディング・グッドエンド2]]
 
-|==|</tw-passagedata><tw-passagedata pid="122" name="ノーマルエンド・レッド獣化解除" tags="" position="2544,0" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="121" name="ノーマルエンド・レッド獣化解除" tags="" position="2544,0" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6804,7 +6791,7 @@ $SBnameの、スティンク・ボア様の言葉に、頭が真っ白になり�
 
 END:ブレイジング・レッドの帰還
 
-|==|</tw-passagedata><tw-passagedata pid="123" name="エンディング・グッドエンド2" tags="" position="2780,0" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="122" name="エンディング・グッドエンド2" tags="" position="2780,0" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6878,7 +6865,7 @@ END:ブレイジング・レッドの帰還
 
 [[移動する-&gt;エンディング・グッドエンド3]]
 
-|==|</tw-passagedata><tw-passagedata pid="124" name="エンディング・グッドエンド3" tags="" position="2901,0" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="123" name="エンディング・グッドエンド3" tags="" position="2901,0" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6944,7 +6931,7 @@ END:ブレイジング・レッドの帰還
 
 [[本部へ-&gt;エンディング・グッドエンド4]]
 
-|==|</tw-passagedata><tw-passagedata pid="125" name="エンディング・グッドエンド4" tags="" position="3012,0" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="124" name="エンディング・グッドエンド4" tags="" position="3012,0" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -6993,7 +6980,7 @@ END:ブレイジング・レッドの帰還
 「あながち間違っちゃいないな。俺の事はそうだな……ドクター・ラットとでも呼んでくれ」
 
 END:最悪の事件を最良の結果で終わらせ、唯一の怪人は生き延び科学者としてエナジー研究の第一人者となった
-|==|</tw-passagedata><tw-passagedata pid="126" name="ゲームオーバー・悪臭猪怪人力士化" tags="" position="1727,4" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="125" name="ゲームオーバー・悪臭猪怪人力士化" tags="" position="1727,4" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -7068,6 +7055,47 @@ END:最悪の事件を最良の結果で終わらせ、唯一の怪人は生き�
 全く、鼠共の嗅覚も味覚も遮断してやらないと、完全に洗脳してるのに仕事にならないなんてな。こんなことならつまらん賭けなんてしなければ良かったか」
 
 GAMEOVER:猪怪人となり、悪臭力士怪人として稽古を続ける
+|==|</tw-passagedata><tw-passagedata pid="126" name="ピーイング・シープの部屋" tags="" position="1378,450" size="100,100">
+=|=
+($menubar:)(set:$time to $time + 1)(set:$PSeepescapeF to 0)
+=||||=
+悪の組織のアジトに似付かわしくない、ファンシーな扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1 and $bluesuitF is 2)[ここにはピーイング・シープという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[こんな扉だというのに何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
+
+(if:$blue is 1 and $soubi is &quot;ヒーロースーツ&quot;)[「ブルー、ここで待っていてくれるか？　危なくなったら逃げてくれ」
+
+「そうですね……今の私では足手纏いですからね」
+
+(if:$MRbluesuitF is 1 and $bluesuitF is 2)[「必ず取り戻してくる」
+
+ブルーのスーツさえ取り戻せば、脱出も現実的なものになるだろう。この戦いは負けられない。](else:)[「必ず戻ってくる」
+
+今のブルーでは強力な怪人と対峙したなら命の危機だ。ここに何があるかは分からないが、何もないということはないだろう。]](elseif:$blue is 1 and $soubi is not &quot;ヒーロースーツ&quot;)[(if:$MRbluesuitF is 1 $bluesuitF is 2)[「ここにブルーのスーツが……」
+
+「しかし、これは……」
+
+嫌な予感がヒシヒシと、扉の向こうからしてくる。こんな強力な怪人、【ゾディアック】にいたのか……。
+
+「やはり、しっかりとした準備をしていった方が……」
+
+「……そう、だな。先に俺のスーツを探そうか」
+
+今は仕方がない。市民を守るためならばともかく、この緊急時に勝てない敵と対峙するべきではないだろう。
+
+[[引き返す-&gt;進行マス]](set:$PSeepescapeF to 1)](else:)[「どう、する？」
+
+「嫌な予感がヒシヒシとしますね……」
+
+「だよな……」
+
+理論的な思考が強く、直感力はそんなにないブルーですらこう言う以上、この先には強力な怪人がいるのだろう。今は引き返した方がいいだろう。
+
+[[引き返す-&gt;進行マス]]](set:$PSeepescapeF to 1)](elseif:$blue is 0)[しかし、足を止めている暇もない。脱出の手立てがあるならば、なんでもしてみるべきだ。]
+
+(if:$PSeepescapeF is 0)[部屋に入ってみると、やはり悪の組織には似付かわしくない、子供部屋のような様相だ。何か柔らかい材質の、パズル柄のカラフルなマットが敷かれており、天井にいくつも動物のメリーが飾られている。赤ん坊用だろう、木の格子柵のベッドもあり、いよいよ何故こんな部屋が悪の組織の部屋にあるのか……。
+
+「おお、可愛い子羊達よ、今日もいっぱいおしっこ出せたかな？」
+
+]
 |==|</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
