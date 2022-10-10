@@ -10,6 +10,8 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 悪の組織からの脱出.</tw-noscript></noscript></tw-story>
 <tw-storydata name="悪の組織からの脱出" startnode="1" creator="Twine" creator-version="2.3.15" ifid="3D360EC4-D44F-48EC-8DC2-EA51337BFEF2" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="冒頭" tags="" position="2,0" size="100,100">=|=
+ver.0.3.0
+
 (set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 20)(set:$soubi to &quot;なし&quot;)(set:$status to &quot;正常&quot;)(set:$name to &quot;ライトニング・イエロー&quot;)&#39;&#39;体力&#39;&#39;：$HP
 &#39;&#39;エナジー&#39;&#39;：$EP
 &#39;&#39;装備&#39;&#39;：$soubi
@@ -86,8 +88,7 @@
 [[部屋を見回す-&gt;冒頭3]]
 
 |==|
-</tw-passagedata><tw-passagedata pid="3" name="ゲームの説明" tags="" position="336,3" size="100,100">
-=|=
+</tw-passagedata><tw-passagedata pid="3" name="ゲームの説明" tags="" position="336,3" size="100,100">=|=
 ($menubar:)
 =||||=
 今、ライトニング・イエローは敵のアジトの中心で単身、装備無しの絶望的な状況にあります。この状況からの脱出がこのゲームのクリア目的となります。
@@ -119,8 +120,7 @@
 
 [[スタート-&gt;進行マス]]
 
-|==|</tw-passagedata><tw-passagedata pid="4" name="冒頭3" tags="" position="227,2" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="4" name="冒頭3" tags="" position="227,2" size="100,100">=|=
 ($menubar:)
 =||||=
 緊急事態ながら、素っ裸で何もない以上、何か使えるものがないかとカプセルから出て部屋を見回す。
@@ -138,8 +138,7 @@
 呆けている場合ではない。着るものも見付からないし、様子を見に怪人が来る前にこの部屋から出てしまおう。
 
 [[ゲームの説明]]
-|==|</tw-passagedata><tw-passagedata pid="5" name="進行マス" tags="" position="6,196" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="5" name="進行マス" tags="" position="6,196" size="100,100">=|=
 (if:$soubi is &quot;ヒーロースーツ&quot;)[(set:$EP to 100)](else:)[(set:$EP to $EP + 5)(if:$EP &gt; 100)[(set:$EP to 100)]](if:$blue is 1)[(if:$soubiB is &quot;ヒーロースーツ&quot;)[(set:$EPB to 100)](else:)[(set:$EPB to $EPB + 5)(if:$EPB &gt; 100)[(set:$EPB to 100)]]]($menubar:)
 =||||=
 俺は真っ白で、ところどころ継ぎ目のある、綺麗ながら明らかに無機質な通路を進んでいく。
@@ -196,8 +195,7 @@
 (if:$soubi is &quot;雑魚戦闘員スーツ&quot; and $status is &quot;正常&quot;)[[[雑魚戦闘員スーツを脱ぐ-&gt;雑魚戦闘員スーツを脱ぐ]]]
 (if:$soubi is &quot;ヒーロースーツ&quot; and $soubiB is &quot;ヒーロースーツ&quot;)[(link-reveal-goto:&quot;出口まで急ぐ&quot;,&quot;進行マス&quot;)[(set:$sinkou to 50)]](if:$darkherokaihiF is 1)[(link-reveal-goto:&quot;出口まで急ぐ&quot;,&quot;進行マス&quot;)[(set:$sinkou to 50)]]
 ]]
-|==|</tw-passagedata><tw-passagedata pid="6" name="先を急ぐイベント" tags="" position="188,158" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="6" name="先を急ぐイベント" tags="" position="188,158" size="100,100">=|=
 ($menubar:)
 (set:$sinkou to $sinkou + 3)
 =||||=
@@ -351,8 +349,7 @@
 [[進む-&gt;進行マス]]]](else:)[俺はそのまま後退し、戦闘員達に気付かれないまま通路を引き返すことに成功した。
 
 [[逃げ出した-&gt;進行マス]](set:$sinkou to $sinkou - 1)]
-]</tw-passagedata><tw-passagedata pid="10" name="部屋イベント" tags="" position="235,444" size="100,200">
-=|=
+]</tw-passagedata><tw-passagedata pid="10" name="部屋イベント" tags="" position="235,444" size="100,200">=|=
 ($menubar:)(set:$room to (random:0,9))
 =||||=
 (if:$room is 0)[扉や上部、左右にも何の部屋かを示す標章や文字が書かれていない。自動で開かないのか、扉の前に立っても開かない。取っ手があるため、開くのは容易であった。
@@ -1220,8 +1217,7 @@ $MRnameの口が吊り上がる。今俺が鼠怪人になってしまってい�
 「すまないブルー、少し待っていてくれ」
 
 [[一度撤退する-&gt;進行マス]](set:$bluemeetF to 1)]]
-|==|</tw-passagedata><tw-passagedata pid="26" name="部屋再訪イベント" tags="" position="239,665" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="26" name="部屋再訪イベント" tags="" position="239,665" size="100,100">=|=
 ($menubar:)(set:$sinkou to $sinkou - 1)
 =||||=
 (if:$saihouroom is &quot;MR部屋&quot;)[扉は他と違いグレーの塗装がされている両開きのスライドドアで、その中央に雑魚戦闘員のスーツに描かれている鼠のマークが描かれている。
@@ -3270,8 +3266,7 @@ $MRnameは、なんとも言えない表情をしている。鼠の顔だから�
 しっかし、ヒーローの末路が、よりにもよってチンポなんてなぁ……なんとも言えない結末だな。まぁ、面白いといえば面白いのか？　元ヒーローのチンポで世界が危ない。まぁ、字面だけなら面白いか」
 
 GAMEOVER:馬怪人になり、ザーメンを出すこと以外考えられない存在になる
-|==|</tw-passagedata><tw-passagedata pid="58" name="リバース・バニーの部屋" tags="" position="906,565" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="58" name="リバース・バニーの部屋" tags="" position="906,565" size="100,100">=|=
 ($menubar:)(set:$time to $time + 1)
 =||||=
 扉を潜ったが、なおも廊下が続いていた。外の廊下とは違い、薄暗く僅かにピンクの証明で照らされている、真っすぐの廊下だ。突き当たりにはカーテンが下りており、他に行ける場所は無さそうだ。
@@ -3738,8 +3733,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 [[舞台に上がる-&gt;リバース・バニー敗北]](set:$status to &quot;ケツマンビッチ&quot;)(set:$name to &quot;淫乱兎怪人&quot;)(set:$soubi to &quot;逆バニースーツ&quot;)(set:$HP to 100)(set:$EP to 100)(set:$sinsyoku to 100)(set:$gameover to 1)
 
-|==|</tw-passagedata><tw-passagedata pid="67" name="リバース・バニーヒーロースーツカード貰う" tags="" position="1018,456" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="67" name="リバース・バニーヒーロースーツカード貰う" tags="" position="1018,456" size="100,100">=|=
 ($menubar:)
 =||||=
 (if:$tokubetuCF is 0 and $MRblueF is 1)[「イイコトはいいから、特別実験室のカードをくれ」
@@ -4022,8 +4016,7 @@ GAMEOVER:兎怪人になり、逆バニー肉便器として怪人のチンポ�
 
 [[部屋を出る-&gt;進行マス]](set:$MRbluesuitF to 1)
 
-|==|</tw-passagedata><tw-passagedata pid="72" name="グラトニー・ドラゴンの部屋" tags="" position="1376,227" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="72" name="グラトニー・ドラゴンの部屋" tags="" position="1374,227" size="100,100">=|=
 ($menubar:)(set:$time to $time + 1)(set:$GDescapeF to 0)
 =||||=
 重苦しく巨大な扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1 and $bluesuitF is 0)[ここにはグラトニー・ドラゴンという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
@@ -4395,7 +4388,7 @@ GAMEOVER:竜怪人となり、太膨肥育されてエナジーザーメンを�
 (if:$EP &gt;= 50)[(link-reveal-goto:&quot;腹へエナジーの電撃を放つ&quot;,&quot;グラトニー・ドラゴン攻撃&quot;)[(set:$GDattack to &quot;腹雷撃&quot;)]　EP消費50](else:)[腹へエナジーの電撃を放つ　エナジーが足りない（必要EP50)]
 
 (if:$GDattack is not &quot;様子見&quot;)[(link-reveal-goto:&quot;様子を見る&quot;,&quot;グラトニー・ドラゴン攻撃&quot;)[(set:$GDattack to &quot;様子見&quot;)]]]
-|==|</tw-passagedata><tw-passagedata pid="79" name="グラトニー・ドラゴン様子見続き" tags="" position="1602,336.3333333333333" size="100,100">
+|==|</tw-passagedata><tw-passagedata pid="79" name="グラトニー・ドラゴン様子見続き" tags="" position="1602,336" size="100,100">
 =|=
 ($menubar:)
 =||||=
@@ -7122,8 +7115,7 @@ END:最悪の事件を最良の結果で終わらせ、唯一の怪人は生き�
 全く、鼠共の嗅覚も味覚も遮断してやらないと、完全に洗脳してるのに仕事にならないなんてな。こんなことならつまらん賭けなんてしなければ良かったか」
 
 GAMEOVER:猪怪人となり、悪臭力士怪人として稽古を続ける
-|==|</tw-passagedata><tw-passagedata pid="126" name="ピーイング・シープの部屋" tags="" position="1382,463" size="100,100">
-=|=
+|==|</tw-passagedata><tw-passagedata pid="126" name="ピーイング・シープの部屋" tags="" position="1382,463" size="100,100">=|=
 ($menubar:)(set:$time to $time + 1)(set:$PSeepescapeF to 0)
 =||||=
 悪の組織のアジトに似付かわしくない、ファンシーな扉の前に立つと、ゆっくりと扉が開いていく。(if:$MRbluesuitF is 1 and $bluesuitF is 2)[ここにはピーイング・シープという怪人がいるはずだ。ブルーのスーツを取り戻すためには、そいつを攻略する必要がある。](else:)[こんな扉だというのに何か、ただならぬ気配を感じる。本当に、この扉を開いても良かったのだろうか。]
