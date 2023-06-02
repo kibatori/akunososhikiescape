@@ -834,7 +834,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 
 [[進む-&gt;進行マス]]](elseif:$status is not &quot;正常&quot; or $huantei is 1)[本当にエナジーが回復してきた。(if:$status is not &quot;正常&quot;)[身体が怪人だからだろうか？　]特に問題もなく、エナジーが満ち満ちてきた。これなら一発くらいならフルパワーでエナジーを解放出来るだろう。
 
-[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is not &quot;正常&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
+[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is &quot;鼠怪人化&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
 
 |==|</tw-passagedata><tw-passagedata pid="18" name="牛化牛乳飲む" tags="" position="706,464" size="100,100">
 =|=
@@ -864,7 +864,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 
 [[進む-&gt;進行マス]](set:$status to &quot;牛怪人化&quot;)(set:$sinsyoku to 50)(set:$EP to 100)(set:$huantei to 1)](elseif:$status is not &quot;正常&quot; or $huantei is 1)[明らかに牛乳の味で、本当に美味しくて、しかもエナジーが回復してきた。(if:$status is not &quot;正常&quot;)[身体が怪人だからだろうか？　]特に問題もなく、エナジーが満ち満ちてきた。これなら一発くらいならフルパワーでエナジーを解放出来るだろう。
 
-[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is not &quot;正常&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
+[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is &quot;鼠怪人化&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
 
 |==|</tw-passagedata><tw-passagedata pid="19" name="馬化ザーメン飲む" tags="" position="812,462" size="100,100">
 =|=
@@ -900,7 +900,7 @@ GAMEOVER:他よりは使える鼠雑魚戦闘員として組織の駒として�
 
 しかし、本当にエナジーが回復してきた。(if:$status is not &quot;正常&quot;)[身体が怪人だからだろうか？　]特に問題もなく、エナジーが満ち満ちてきた。これなら一発くらいならフルパワーでエナジーを解放出来るだろう。少し複雑な気分だ……。
 
-[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is not &quot;正常&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
+[[進む-&gt;進行マス]](set:$EP to 100)(if:$status is &quot;鼠怪人化&quot;)[(set:$sinsyoku to $sinsyoku + 10)]]
 
 |==|</tw-passagedata><tw-passagedata pid="20" name="侵食鼠化イベント" tags="" position="6,446" size="100,100">
 =|=
